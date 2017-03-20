@@ -1,0 +1,3 @@
+
+.df-error-mark:before { content: '\e800'; } /* '' */
+.df-success-mark:before { content: '\e801'; } /* '' */
