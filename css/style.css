@@ -178,6 +178,9 @@ body {
     -o-transition: opacity 1s linear;
     -webkit-transition: opacity 1s linear;
 }
+.drop-container .drop-field .df-error .progress_bar {
+    display: none;
+}
 
 .drop-container .drop-field .progress_bar.trans_completed {
     opacity: 0;

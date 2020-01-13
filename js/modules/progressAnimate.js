@@ -1,12 +1,14 @@
-export default function(xhr,previewElements){
+export default function(xhr){
+    const previewElements = document.querySelectorAll('.df_preview');
+    const progress_bar = previewElements[previewElements.length-1].childNodes[3];
+    
     xhr.upload.onprogress = (evt) => { 
-        previewElements.progress_bar.classList.add('progress_bar')
-        let percentLoaded = Math.round((evt.loaded / evt.total) * 100) + '%';
-              
-        $(previewElements.percent).animate({width: percentLoaded},0);
+        progress_bar.classList.add('progress_bar')
+        let percentLoaded = Math.round((evt.loaded / evt.total) * 100) + '%';     
+        $(progress_bar.children).animate({width: percentLoaded},0);
     }
 
     xhr.onloadend = (e) => {
-        $(previewElements.progress_bar).last().addClass('trans_completed');
+        $(progress_bar).addClass('trans_completed');
     }     
   };
